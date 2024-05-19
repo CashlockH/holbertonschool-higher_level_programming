@@ -6,4 +6,4 @@ def print_last_digit(number):
     last = temp % 10
     if number < 0:
         last = temp % 10 * -1
-    print(last)
+    print(last, end="")
