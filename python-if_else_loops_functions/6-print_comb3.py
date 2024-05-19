@@ -2,5 +2,5 @@
 for i in range(8):
     for j in range(10):
         if (i < j):
-            print(f"{i}{j}", end=", ")
+            print("{}{}".format(i, j), end=", ")
 print(89)
