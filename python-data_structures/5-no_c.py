@@ -1,9 +1,4 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    new_string = bytearray(my_string, 'utf-8')
-    j = 0
-    for i in new_string:
-        if i == 67 or i == 99:
-            del new_string[j]
-        j = j + 1
-    return new_string.decode()
+    new_string = bytearray(char for char in my_string.encode('utf-8') if char not in (67, 99))
+    return new_string.decode('utf-8')
