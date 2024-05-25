@@ -6,6 +6,6 @@ def print_matrix_integer(matrix=[[]]):
         else:
             for a, b in enumerate(j):
                 if a != len(j) - 1:
-                    print("{:d}".format(b), end = " ")
+                    print("{:d}".format(b), end=" ")
                 else:
                     print("{:d}".format(b))
