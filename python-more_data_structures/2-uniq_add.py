@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
     new_list = sorted(my_list.copy())
-    print(new_list)
     i = 1
     a = new_list[0]
     b = 0
