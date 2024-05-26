@@ -4,21 +4,18 @@ def roman_to_int(roman_string):
     if type(roman_string) is not str or not roman_string:
         return 0
     for i in roman_string:
-        match i:
-            case 'X':
+            if i == 'X':
                 a = a + 10
-            case 'I':
+            elif i == 'I':
                 a = a + 1
-            case 'V':
+            elif i == 'V':
                 a = a + 5
-            case 'L':
+            elif i ==  'L':
                 a = a + 50
-            case 'C':
+            elif i == 'C':
                 a = a + 100
-            case 'D':
+            elif i == 'D':
                 a = a + 500
-            case 'M':
+            elif i == 'M':
                 a = a + 1000
-            case _:
-                a = 0
     return a
