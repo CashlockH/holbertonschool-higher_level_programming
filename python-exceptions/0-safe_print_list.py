@@ -10,5 +10,5 @@ def safe_print_list(my_list=[], x=0):
         if i < x:
             return i + 1
         return i
-    except IndexError:
+    except (IndexError, UnboundLocalError):
         return 0
