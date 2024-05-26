@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
     try:
-        if x >= len(my_list):
-            x = len(my_list)
         for i, j in enumerate(my_list):
-            if i < x - 1:
-                print("{}".format(j), end = "")
+            if i < x:
+                print("{}".format(j), end="")
             else:
                 break
-        print("{}".format(j))
-        return x
-    except:
-        pass
+        print()
+        if i < x:
+            return i + 1
+        return i
+    except Exception as err:
+        print("this is not valid")
