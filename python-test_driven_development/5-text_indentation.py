@@ -20,3 +20,4 @@ def text_indentation(text):
             else:
                 print(i, end="")
             a = 0
+text_indentation("""Holberton. School? How are you: John""")
