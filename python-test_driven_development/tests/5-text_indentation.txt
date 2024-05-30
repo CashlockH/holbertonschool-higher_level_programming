@@ -1,0 +1,19 @@
+Testing for 5-text_indentation
+=============================
+
+Importing:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test Cases:
+	>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas""")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	Quonam modo?
+	<BLANKLINE>
+	Utrum igitur tibi litteram videor an totas
+	>>> text_indentation(12)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
