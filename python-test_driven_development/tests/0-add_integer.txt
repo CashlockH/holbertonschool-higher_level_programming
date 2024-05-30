@@ -18,3 +18,8 @@ check type:
 	>>> add_integer(5, "string")
 	Traceback (most recent call last):
 	TypeError: b must be an integer
+
+overflow error:
+	>>> add_integer(1.7976931348623157e+308, 6)
+	Traceback (most recent call last):
+	OverflowError
