@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Documentation of the modulae"""
 def add_integer(a, b=98):
     """ Adds two integer"""
     if (c := isinstance(a, (float, int))) and (d := isinstance(b, (float, int))):
