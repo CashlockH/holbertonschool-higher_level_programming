@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""text indentation module"""
+
+
 def text_indentation(text):
+    """Tokenize and prints the text"""
     a = 0
     if not isinstance(text, str):
         raise TypeError("text must be a string")
