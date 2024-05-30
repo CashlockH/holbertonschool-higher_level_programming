@@ -12,8 +12,8 @@ def text_indentation(text):
             a = 1
             print(i)
         else:
-            if a != 1:
-                print(i, end="")
-            else:
+            if a == 1 and i == " ":
                 print()
+            else:
+                print(i, end="")
             a = 0
