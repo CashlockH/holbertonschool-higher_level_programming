@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+"""Rectangle class"""
+
+
 class Rectangle():
-    
+    """Class with setter and getter methods"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         return self.__width
@@ -12,7 +15,7 @@ class Rectangle():
     @property
     def height(self):
         return self.__height
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
