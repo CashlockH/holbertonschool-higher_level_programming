@@ -6,7 +6,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 class Rectangle(BaseGeometry):
     """subclass of BaseGeometry"""
     def __init__(self, width, height):
-        super().__init__
-        if not BaseGeometry.integer_validator(self, width, height):
-            self.__width = width
-            self.__height = height
+        self.__width = width
+        self.__height = height
+        super().integer_validator("Rectangle", self.__width)
+        super().integer_validator("Rectangle", self.__height)
