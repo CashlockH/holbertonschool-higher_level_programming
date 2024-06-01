@@ -39,3 +39,8 @@ Test cases:
 	... except Exception as e:
     	...	print("There should be two arguments")
 	There should be two arguments
+	>>> try:
+	...	bg.ineger_validator("age")
+	... except Exception as e:
+	... 	print("There should be two arguments")
+	There should be two arguments
