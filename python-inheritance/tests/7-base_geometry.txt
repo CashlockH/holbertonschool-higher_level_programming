@@ -34,3 +34,8 @@ Test cases:
 	>>> bg.integer_validator("age", None)
         Traceback (most recent call last):
         TypeError: age must be an integer
+	>>> try:  
+    	...	bg.integer_validator()
+	... except Exception as e:
+    	...	print("There should be two arguments")
+	There should be two arguments
