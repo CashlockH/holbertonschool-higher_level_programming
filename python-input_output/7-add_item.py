@@ -8,4 +8,4 @@ i = 1
 new = []
 while(i < len(sys.argv)):
     new[i - 1] = sys.argv[i]
-save_to_json_file(new, add_item.json)
+save_to_json_file(new, "add_item.json")
