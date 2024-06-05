@@ -9,10 +9,10 @@ try:
     a = load_from_json_file("add_item.json")
     for b in a:
         new.append(b)
-except:
+except Exception as err:
     pass
 i = 1
-while(i < len(sys.argv)):
+while (i < len(sys.argv)):
     new.append(sys.argv[i])
     i += 1
 save_to_json_file(new, "add_item.json")
