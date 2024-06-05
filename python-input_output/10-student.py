@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Student class"""
+
+
 class Student:
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
@@ -7,7 +9,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if attrs != None:
+        if attrs is not None:
             new = dict()
             for i in attrs:
                 if i in self.__dict__:
