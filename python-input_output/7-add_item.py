@@ -7,5 +7,6 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 i = 1
 new = []
 while(i < len(sys.argv)):
-    new[i - 1] = sys.argv[i]
+    new.append(sys.argv[i])
+    i += 1
 save_to_json_file(new, "add_item.json")
