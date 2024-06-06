@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Pascal triangle"""
+
+
 def pascal_triangle(n):
+    """prints n row of pascal triangle"""
     triangle = []
     a = 1
     for i in range(n):
