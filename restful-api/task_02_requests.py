@@ -6,7 +6,7 @@ import csv
 def fetch_and_print_posts():
     """Get and prints the title of jsonplaceholder"""
     r = requests.get("https://jsonplaceholder.typicode.com/posts")
-    print(r.status_code)
+    print("Status Code: {}".format(r.status_code))
     for i in r.json():
         print(i['title'])
 
