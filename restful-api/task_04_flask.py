@@ -31,23 +31,22 @@ def user(username):
 
 @app.route('/add_user', methods=['GET', 'POST'])
 def parser():
-        usera = request.json
-        if usera:
-            if "username" not in usera:
-                return jsonify({"error": "Username not found"}), 404
-            users[usera['username']] = usera
-            new = {
-                "message": "User added",
-                "user": {
-                    "username": usera['username'],
-                    "name": usera['name'],
-                    "age": usera['age'],
-                    "city": usera['city']
-                }
+    usera = request.json
+    if not usera:
+        return jsonify({"error": "No JSON data provided"}), 400
+    if 'username' not in usera:
+        return jsonify({"error": "Username is required"}), 400
+    users[usera['username']] = usera
+    new = {
+        "message": "User added",
+        "user": {
+            "username": usera['username'],
+            "name": usera['name'],
+            "age": usera['age'],
+            "city": usera['city']
             }
-            return jsonify(new), 201
-        else:
-            return 400
+        }
+    return jsonify(new), 200
 
 
 if __name__ == "__main__":
