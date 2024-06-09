@@ -34,7 +34,7 @@ def parser():
         usera = request.json
         if usera:
             if "username" not in usera:
-                return "Username required", 400
+                return jsonify({"error": "Username not found"}), 400
             users[usera['username']] = usera
             new = {
                 "message": "User added",
