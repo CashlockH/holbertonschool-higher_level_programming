@@ -43,7 +43,7 @@ def parser():
                     "city": usera['city']
                 }
             }
-            return jsonify(new), 201
+            return jsonify(new), 200
         else:
             return 400
 
