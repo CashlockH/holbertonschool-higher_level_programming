@@ -27,8 +27,16 @@ class Site(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(a.encode('utf-8'))
+        elif self.path == '/status':
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            self.wfile.write(b'Ok')
         else:
-            self.send_response(404, message="Endpoint not found")
+            self.send_response(404)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            self.wfile.write(b'404 Not Found')
 
     def serv_forever(Port):
         with socketserver.TCPServer(("", Port), Site) as httpd:
