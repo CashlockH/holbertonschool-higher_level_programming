@@ -29,14 +29,15 @@ def user(username):
     return jsonify({"error": "User not found"})
 
 
-@app.route('/add_user', methods=['GET', 'POST'])
+@app.route('/add_user', methods=['POST'])
 def parser():
-    if request.method == "POST":
-        user = request.json
-        users[user['username']] = user
-    new = {}
-    new['message'] = "User added"
-    new['user'] = user
+    user = request.json
+    users[user['username']] = user
+    new = {
+        'message': "User added",
+        'user': user
+    }
+    return jsonify(new)
 
 
 if __name__ == "__main__":
