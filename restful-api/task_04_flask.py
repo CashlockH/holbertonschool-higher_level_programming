@@ -31,19 +31,21 @@ def user(username):
 
 @app.route('/add_user', methods=['POST'])
 def parser():
-    usera = request.json
-    users[usera['username']] = usera
-    new = {
-        "message": "User added",
-        "user": {
-            "username": usera['username'],
-            "name": usera['name'],
-            "age": usera['age'],
-            "city": usera['city']
-        }
-    }
-    if users:
-        return jsonify(new)
+        usera = request.json
+        if usera:
+            users[usera['username']] = usera
+            new = {
+                "message": "User added",
+                "user": {
+                    "username": usera['username'],
+                    "name": usera['name'],
+                    "age": usera['age'],
+                    "city": usera['city']
+                }
+            }
+            return jsonify(new)
+        else:
+            return 400
 
 
 if __name__ == "__main__":
