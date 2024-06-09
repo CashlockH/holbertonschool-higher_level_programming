@@ -1,4 +1,3 @@
-"""Simple Flask request handler"""
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -33,9 +32,12 @@ def user(username):
 @app.route('/add_user', methods=['GET', 'POST'])
 def parser():
     if request.method == "POST":
-        user = request.form.get('user')
+        user = request.json
         users[user['username']] = user
+    new = {}
+    new['message'] = "User added"
+    new['user'] = user
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
