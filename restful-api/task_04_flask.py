@@ -26,7 +26,7 @@ def user(username):
     for key in users.keys():
         if key == username:
             return jsonify(users[key])
-    return jsonify({"error": "User not found"})
+    return jsonify({"error": "User not found"}), 404
 
 
 @app.route('/add_user', methods=['GET', 'POST'])
