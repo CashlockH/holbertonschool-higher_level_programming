@@ -34,3 +34,6 @@ class Site(http.server.BaseHTTPRequestHandler):
         with socketserver.TCPServer(("", Port), Site) as httpd:
             print("serving at port", Port)
             httpd.serve_forever()
+
+
+Site.serv_forever(8000)
