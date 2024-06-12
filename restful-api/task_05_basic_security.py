@@ -54,7 +54,7 @@ def jwt_protected():
 @jwt_required()
 def admin_only():
     current_user = get_jwt_identity()
-    if current_user['role'] == 'admin1':
+    if current_user['role'] == 'admin':
         return "Admin Access: Granted", 200
     return "Admins only", 403
 
