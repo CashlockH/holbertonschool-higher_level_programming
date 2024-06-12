@@ -42,7 +42,7 @@ def login():
     if username in users and check_password_hash(users[username]['password'], password):
         access_token = create_access_token(identity=username)
         return jsonify(access_token=access_token)
-    return None, 401
+    return jsonify("Wrong username or password"), 401
 
 @app.route('/jwt-protected', methods=["GET"])
 @jwt_required()
