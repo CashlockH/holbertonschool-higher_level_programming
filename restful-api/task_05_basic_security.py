@@ -50,6 +50,14 @@ def jwt_protected():
     current_user = get_jwt_identity()
     return "JWT Auth: Access Granted", 200
 
+@app.route('/admin-only', methods=["GET"])
+@jwt_required()
+def admin_only():
+    current_user = get_jwt_identity()
+    if current_user['role'] == 'admin1':
+        return "Admin Access: Granted", 200
+    return "Admins only", 403
+
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
