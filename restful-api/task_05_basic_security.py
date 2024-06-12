@@ -17,6 +17,9 @@ def verify_password(username, password):
         return username
     return None
 
+@auth.error_handler
+def auth_error():
+    return "Access Denied", 401
 
 @app.route('/basic-protected', methods = ['GET'])
 @auth.login_required
@@ -24,4 +27,4 @@ def protected():
     return "Basic Auth: Access Granted"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
