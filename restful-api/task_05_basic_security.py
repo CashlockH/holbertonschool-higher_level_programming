@@ -48,13 +48,15 @@ def login():
 @jwt_required()
 def jwt_protected():
     current_user = get_jwt_identity()
-    return "JWT Auth: Access Granted", 200
+    if current_user['username'] in users:
+        return "JWT Auth: Access Granted", 200
+    return jsonify({"error": "Invalid token"}), 401
 
 @app.route('/admin-only', methods=["GET"])
 @jwt_required()
 def admin_only():
     current_user = get_jwt_identity()
-    if current_user['role'] == 'admin':
+    if current_user['role'] == 'admin' and current_user['username'] in users:
         return current_user
     return jsonify({"error": "Only admin"}), 403
 
