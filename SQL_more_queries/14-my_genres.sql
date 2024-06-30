@@ -16,3 +16,4 @@ WHERE
     WHERE
       title = 'Dexter'
   );
+ORDER BY tv_genres.name
