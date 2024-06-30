@@ -13,7 +13,7 @@ class State(Base):
     id = Column(
             Integer,
             primary_key=True,
-            auto_increment=True,
+            autoincrement=True,
             unique=True,
             nullable=False)
     name = Column(String(128), nullable=False)
