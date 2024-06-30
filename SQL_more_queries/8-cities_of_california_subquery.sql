@@ -5,7 +5,7 @@ SELECT
 FROM
   cities
 WHERE
-  state_id = (
+  state_id IN (
     SELECT
       id
     FROM
