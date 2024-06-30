@@ -9,7 +9,7 @@ if __name__ == '__main__':
     u = sys.argv[1]
     p = sys.argv[2]
     d_n = sys.argv[3]
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(u, p, d_n))
+    engine = create_engine(f'mysql+mysqldb://{u}:{p}@localhost/{d_n}')
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).order_by(State.id)
