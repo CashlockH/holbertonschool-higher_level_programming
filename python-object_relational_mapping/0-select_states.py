@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Mysql database"""
-import MySQLdb
-import sys
 if __name__ == '__main__':
+    import MySQLdb
+    import sys
     username_sys = sys.argv[1]
     password_sys = sys.argv[2]
     database_name = sys.argv[3]
@@ -12,7 +12,5 @@ if __name__ == '__main__':
     states = c.fetchall()
     for state in states:
         print(state)
-    if 'c' in locals():
-        c.close()
-    if 'db' in locals() and db.open:
-        db.close()
+    c.close()
+    db.close()
