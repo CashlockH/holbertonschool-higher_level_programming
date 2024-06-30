@@ -10,7 +10,7 @@ if __name__ == '__main__':
     u = sys[1]
     p = sys[2]
     d_n = sys[3]
-    qengine = create_engine(f'mysql+mysqldb://{u}:{p}@localhost/{d_n}')
+    qengine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(u, p, d_n)
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).order_by(State.id)
