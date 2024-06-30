@@ -7,6 +7,8 @@ database_name = sys.argv[3]
 db=MySQLdb.connect(host="localhost", port=3306, user = username_sys, password=password_sys, database=database_name)
 c = db.cursor()
 c.execute("""SELECT id, name FROM states ORDER BY id""")
-c.fetchall()
+states = c.fetchall()
+for state in states:
+    print(state)
 c.close()
 db.close()
