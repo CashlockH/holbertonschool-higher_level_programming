@@ -11,7 +11,7 @@ WHERE
     FROM
       state
     WHERE
-      name = "California"
+      name = 'California'
   )
 ORDER BY
   id ASC;
