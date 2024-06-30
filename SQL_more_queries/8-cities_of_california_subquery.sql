@@ -5,11 +5,11 @@ SELECT
 FROM
   cities
 WHERE
-  state_id IN (
+  state_id = (
     SELECT
       id
     FROM
-      state
+      states
     WHERE
       name = 'California'
   )
