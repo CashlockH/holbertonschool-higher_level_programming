@@ -12,5 +12,7 @@ if __name__ == '__main__':
     states = c.fetchall()
     for state in states:
         print(state)
-    c.close()
-    db.close()
+    if 'c' in locals():
+        c.close()
+    if 'db' in locals() and db.open:
+        db.close()
