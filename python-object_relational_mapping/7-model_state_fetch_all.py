@@ -13,6 +13,6 @@ if __name__ == '__main__':
     qengine = create_engine(f'mysql+mysqldb://{u}:{p}@localhost/{d_n}')
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id).all()
+    states = session.query(State).order_by(State.id)
     for state in states:
         print(state)
