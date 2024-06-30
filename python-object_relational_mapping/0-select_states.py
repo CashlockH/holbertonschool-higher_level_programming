@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Mysql database"""
 import MySQLdb
 import sys
 username_sys = sys.argv[1]
