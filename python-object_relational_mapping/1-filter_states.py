@@ -18,11 +18,11 @@ if __name__ == "__main__":
     c.execute("""
         SELECT *
         FROM states
-        WHERE name LIKE 'N%'
         ORDER BY states.id
     """)
     states = c.fetchall()
     for state in states:
-        print(state)
+        if state[1].startswith("N"):
+            print(state)
     c.close()
     db.close()
