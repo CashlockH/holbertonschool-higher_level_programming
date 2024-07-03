@@ -2,6 +2,7 @@
 """Filtering state query"""
 import MySQLdb
 import sys
+
 if __name__ == "__main__":
     username = sys.argv[1]
     password_sys = sys.argv[2]
@@ -12,11 +13,16 @@ if __name__ == "__main__":
         user=username,
         password=password_sys,
         database=database_name
-        )
+    )
     c = db.cursor()
-    c.execute("""SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id""")
+    c.execute("""
+        SELECT * 
+        FROM states 
+        WHERE name LIKE 'N%' 
+        ORDER BY states.id
+    """)
     states = c.fetchall()
     for state in states:
-        print(state)
+        print(state)    
     c.close()
     db.close()
