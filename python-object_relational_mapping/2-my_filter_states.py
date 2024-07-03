@@ -17,13 +17,13 @@ if __name__ == "__main__":
     )
     c = db.cursor()
     c.execute("""
-        SELECT * 
-        FROM states 
+        SELECT *
+        FROM states
         WHERE name = %s
         ORDER BY states.id
     """, (state_name,))
     states = c.fetchall()
     for state in states:
-        print(state)    
+        print(state)
     c.close()
     db.close()
