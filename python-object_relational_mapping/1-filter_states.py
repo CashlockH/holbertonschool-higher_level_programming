@@ -16,13 +16,13 @@ if __name__ == "__main__":
     )
     c = db.cursor()
     c.execute("""
-        SELECT * 
-        FROM states 
-        WHERE name LIKE 'N%' 
+        SELECT *
+        FROM states
+        WHERE name LIKE 'N%'
         ORDER BY states.id
     """)
     states = c.fetchall()
     for state in states:
-        print(state)    
+        print(state)
     c.close()
     db.close()
