@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Filtering state query"""
 import MySQLdb
 import sys
 if __name__ = "__main__":
