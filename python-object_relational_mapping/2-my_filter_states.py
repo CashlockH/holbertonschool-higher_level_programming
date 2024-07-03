@@ -19,9 +19,9 @@ if __name__ == "__main__":
     c.execute("""
         SELECT *
         FROM states
-        WHERE name = %s
+        WHERE name = '{}'
         ORDER BY states.id
-    """, (state_name,))
+    """.format(state_name))
     states = c.fetchall()
     for state in states:
         print(state)
