@@ -20,18 +20,21 @@ if __name__ == "__main__":
     )
     c = db.cursor()
     c.execute("""
-        SELECT cities.name
+        SELECT cities.name, states.name
         FROM cities
         INNER JOIN states
         ON states.id = cities.state_id
-        WHERE states.name = BINARY '{}'
         ORDER BY cities.id
-    """.format(state_name))
+    """)
     cities = c.fetchall()
-    for index, city in enumerate(cities):
-        if index < len(cities) - 1:
-            print(city[0], end=", ")
+    city_list = []
+    for city in cities:
+        if city[1] == state_name:
+            city_list.append(city[0])
+    for index, city in enumerate(city_list):
+        if index < len(city_list) - 1:
+            print(city, end=", ")
         else:
-            print(city[0])
+            print(city)
     c.close()
     db.close()
