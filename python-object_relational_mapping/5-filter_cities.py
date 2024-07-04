@@ -20,7 +20,7 @@ if __name__ == "__main__":
     )
     c = db.cursor()
     c.execute("""
-        SELECT cities.name, states.name
+        SELECT *
         FROM cities
         INNER JOIN states
         ON states.id = cities.state_id
@@ -29,8 +29,8 @@ if __name__ == "__main__":
     cities = c.fetchall()
     city_list = []
     for city in cities:
-        if city[1] == state_name:
-            city_list.append(city[0])
+        if city[4] == state_name:
+            city_list.append(city[2])
     for index, city in enumerate(city_list):
         if index < len(city_list) - 1:
             print(city, end=", ")
