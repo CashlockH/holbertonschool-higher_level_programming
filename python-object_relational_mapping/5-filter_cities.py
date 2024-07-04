@@ -24,7 +24,7 @@ if __name__ == "__main__":
         FROM cities
         INNER JOIN states
         ON states.id = cities.state_id
-        WHERE states.name = '{}'
+        WHERE states.name = BINARY '{}'
         ORDER BY cities.id
     """.format(state_name))
     cities = c.fetchall()
