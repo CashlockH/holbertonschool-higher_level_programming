@@ -19,7 +19,7 @@ if __name__ == "__main__":
     c.execute("""
         SELECT *
         FROM states
-        WHERE name = '{}'
+        WHERE name = BINARY '{}'
         ORDER BY states.id
     """.format(state_name))
     states = c.fetchall()
