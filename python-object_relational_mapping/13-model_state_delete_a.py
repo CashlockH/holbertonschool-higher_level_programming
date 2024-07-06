@@ -17,4 +17,3 @@ if __name__ == '__main__':
             session.delete(state)
     session.commit()
     session.close()
-        
