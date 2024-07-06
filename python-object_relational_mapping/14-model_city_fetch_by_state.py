@@ -12,6 +12,9 @@ if __name__ == '__main__':
     engine = create_engine(f'mysql+mysqldb://{u}:{p}@localhost/{d_n}')
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State, City).filter(State.id==City.state_id).order_by(City.id)
+    states = session.query(State, City).\
+        filter(State.id == City.state_id).\
+        order_by(City.id)
     for state in states:
-        print("{}: ({}) {}".format(state.State.name, state.City.id, state.City.name))
+        print("{}: ({}) {}".format(
+            state.State.name, state.City.id, state.City.name))

@@ -1,6 +1,10 @@
+#!/usr/bin/python3
+"""Creating City Class"""
+
 from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
+
 
 class City(Base):
     """City class"""
