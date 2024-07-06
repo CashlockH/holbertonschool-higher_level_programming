@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Creating new state"""
+"""Updateing State object"""
 from model_state import Base, State
 from sqlalchemy import create_engine
 import sys
@@ -11,8 +11,7 @@ if __name__ == '__main__':
     engine = create_engine(f'mysql+mysqldb://{u}:{p}@localhost/{d_n}')
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_state = State(name="Louisiana")
-    session.add(new_state)
+    state = session.query(State).filter(State.id == 2).first()
+    state.name = "New Mexico"
     session.commit()
-    print(new_state.id)
     session.close()
