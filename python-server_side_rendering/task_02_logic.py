@@ -6,7 +6,11 @@ app = Flask(__name__)
 def home():
     with open('items.json') as file:
         data = json.load(file)
-    return render_template('items.html', items = data["items"])
+    if data['items']:
+        items = data['items']
+    else:
+        items = []
+    return render_template('items.html', items)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
