@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+  {%if not data %}
+    <p>Wrong source</p>
+  {%else %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+      {% if not id %}
+        {%for items in data %}
+        <tr>
+          <td>{{items["name"]}}</td>
+          <td>{{items["category"]}}</td>
+          <td>{{items["price"]}}</td>
+        </tr>
+        {% endfor %}
+      {%else%}
+      {% set product_found = false %}
+      {% for items in data %}
+        {% if items['id'] == id %}
+          <tr>
+            <td>{{ items["name"] }}</td>
+            <td>{{ items["category"] }}</td>
+            <td>{{ items["price"] }}</td>
+          </tr>
+          {% set product_found = true %}
+        {% endif %}
+      {% endfor %}
+      {% if not product_found %}
+        <p>Product not found</p>
+      {% endif %}
+      {%endif%}
+    </table>
+  {%endif%}
+</body>
+</html>
