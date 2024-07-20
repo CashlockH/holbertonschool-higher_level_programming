@@ -8,6 +8,8 @@
 <body>
   {%if not data %}
     <p>Wrong source</p>
+  {%elif id == -1%}
+    <p>Product not found</p>
   {%else %}
     <table>
       <tr>
@@ -15,29 +17,20 @@
         <th>Category</th>
         <th>Price</th>
       </tr>
-      {% if not id %}
-        {%for items in data %}
-        <tr>
-          <td>{{items["name"]}}</td>
-          <td>{{items["category"]}}</td>
-          <td>{{items["price"]}}</td>
-        </tr>
-        {% endfor %}
+      {%if not id%}
+      {%for items in data%}
+      <tr>
+        <td>{{items["name"]}}</td>
+        <td>{{items["category"]}}</td>
+        <td>{{items["price"]}}</td>
+      </tr>
+      {%endfor%}
       {%else%}
-      {% set product_found = false %}
-      {% for items in data %}
-        {% if items['id'] == id %}
-          <tr>
-            <td>{{ items["name"] }}</td>
-            <td>{{ items["category"] }}</td>
-            <td>{{ items["price"] }}</td>
-          </tr>
-          {% set product_found = true %}
-        {% endif %}
-      {% endfor %}
-      {% if not product_found %}
-        <p>Product not found</p>
-      {% endif %}
+      <tr>
+        <td>{{ data["name"] }}</td>
+        <td>{{ data["category"] }}</td>
+        <td>{{ data["price"] }}</td>
+      </tr>
       {%endif%}
     </table>
   {%endif%}

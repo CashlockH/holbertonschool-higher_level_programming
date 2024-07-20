@@ -9,6 +9,15 @@ def search():
     source = request.args.get('source')
     id = request.args.get('id')
     data = file_handler(source)
+    if id:
+        found = 0
+        for item in data:
+            if item["id"] == int(id):
+                data = item
+                found = 1
+        if found == 0:
+            id = -1
+
     if data == 0:
         return "Wrong source", 200
     return render_template('product_display.html', data = data, id = int(id) if id else id), 200
