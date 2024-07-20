@@ -15,8 +15,7 @@ def search():
 def file_handler(source):
     if source == "json":
         with open("products.json", 'r') as json_file:
-            for item in json_file:
-                data = json.loads(item)
+            data = json.loads(json_file)
         return data
     elif source == "csv":
         list_of_csv = []
