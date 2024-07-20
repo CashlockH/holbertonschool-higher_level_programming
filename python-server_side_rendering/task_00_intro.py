@@ -11,7 +11,7 @@ def generate_invitations(template, attendees):
     for index, element in enumerate(attendees):
         file = "output_{}.txt".format(index)
         if os.path.exists(file) is False:
-            with open(file, 'r+') as f:
+            with open(file, 'w+') as f:
                 f.write(template.format(name = checker("name", element),
                                         event_title = checker("event_title", element),
                                         event_date = checker("event_date", element),
