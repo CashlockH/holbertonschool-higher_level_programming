@@ -19,7 +19,7 @@ def generate_invitations(template, attendees):
 
 def checker(key, dict):
     if key not in dict:
-        return "{}: N/A".format(key)
+        return "\"{}: N/A\"".format(key)
     elif not dict[key]:
         return "\"N/A\""
     else:
