@@ -10,7 +10,7 @@ def home():
         items = data['items']
     else:
         items = []
-    return render_template('items.html', items)
+    return render_template('items.html', items=items)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
