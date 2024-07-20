@@ -9,7 +9,7 @@ def generate_invitations(template, attendees):
         print("No data provided, no output files generated.")
         return
     for index, element in enumerate(attendees):
-        file = "output_{}.txt".format(index)
+        file = "output_{}.txt".format(index + 1)
         with open(file, 'w+') as f:
             f.write(template.format(name = checker("name", element),
                                     event_title = checker("event_title", element),
