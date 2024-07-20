@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     with open('items.json') as file:
         data = json.load(file)
-    if not data["items"]:
+    if not data:
         return "No items found", 200
     return render_template('items.html', items = data["items"])
 
