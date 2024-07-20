@@ -2,6 +2,7 @@ import os
 def generate_invitations(template, attendees):
     if type(template) is not str or type(attendees) is not list:
         print("Invalid input type")
+        return
     if not template:
         print("Template is empty, no output files generated.")
         return
@@ -18,9 +19,7 @@ def generate_invitations(template, attendees):
                                         event_location = checker("event_location", element)))
 
 def checker(key, dict):
-    if key not in dict:
-        return "N/A".format(key)
-    elif not dict[key]:
+    if key not in dict or not dict[key]:
         return "N/A"
     else:
         return "{}".format(dict[key])
