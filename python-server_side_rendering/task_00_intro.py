@@ -10,12 +10,11 @@ def generate_invitations(template, attendees):
         return
     for index, element in enumerate(attendees):
         file = "output_{}.txt".format(index)
-        if os.path.exists(file) is False:
-            with open(file, 'w+') as f:
-                f.write(template.format(name = checker("name", element),
-                                        event_title = checker("event_title", element),
-                                        event_date = checker("event_date", element),
-                                        event_location = checker("event_location", element)))
+        with open(file, 'w+') as f:
+            f.write(template.format(name = checker("name", element),
+                                    event_title = checker("event_title", element),
+                                    event_date = checker("event_date", element),
+                                    event_location = checker("event_location", element)))
 
 def checker(key, dict):
     if key not in dict:
