@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     with open('items.json') as file:
         data = json.load(file)
-    if data['items']:
+    if "items" in data:
         items = data['items']
     else:
         items = []
