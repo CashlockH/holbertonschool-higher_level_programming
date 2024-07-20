@@ -10,7 +10,7 @@ def search():
     data = file_handler(source)
     if data == 0:
         return
-    return render_template('product_display.html', data = data, id = int(id) if id else id)
+    return render_template('product_display.html', data = data, id = int(id) if id else id), 200
 
 def file_handler(source):
     if source == "json":
