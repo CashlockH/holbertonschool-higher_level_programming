@@ -9,7 +9,7 @@ def search():
     id = request.args.get('id')
     data = file_handler(source)
     if data == 0:
-        return
+        return "Wrong source", 200
     return render_template('product_display.html', data = data, id = int(id) if id else id), 200
 
 def file_handler(source):
