@@ -26,7 +26,7 @@ def file_handler(source):
                 if not row[0] == "id":
                     list_of_csv.append({'id': row[0], 'name': row[1], 'category': row[2], 'price': row[3]})
         return list_of_csv
-    elif source == "db":
+    elif source == "sql":
         list_of_db = []
         con = sqlite3.connect("products.db")
         cur = con.cursor()
